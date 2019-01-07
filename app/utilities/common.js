@@ -3,7 +3,9 @@ import { nodeKey } from './strings'
 
 export const getSide = direction => {
   let start = direction.split('+').pop().replace(/^\w/, c => c.toUpperCase())
-  return start === 'Up' || start === 'Down' ? 'Top' : 'Left'
+  if (start == 'Up') start = 'Top'
+  if (start == 'Down') start = 'Bottom'
+  return start
 }
 
 export const getNodeIndex = el => {

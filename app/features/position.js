@@ -185,7 +185,8 @@ const extractCurrentValueAndSide = (el, direction) => {
       : x
   }
   else {
-    style   = getSide(direction).toLowerCase()
+    const side = getSide(direction).toLowerCase()
+    style = side === 'top' || side === 'bottom' ? 'top' : 'left'
     current = getStyle(el, style)
 
     current === 'auto'
